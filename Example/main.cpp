@@ -1,25 +1,32 @@
 #include <iostream>
-#include <windows.h> // Для SetConsoleOutputCP
+#include <windows.h>
+#include "Triangle.h" // Подключаем наш класс
 
 int main() {
-    // Устанавливаем кодировку вывода в UTF-8 для корректного отображения кириллицы
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    double side, height;
+    double s, h;
 
     std::cout << "Вычисление площади треугольника" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
-    std::cout << "Введите длину стороны треугольника: ";
-    std::cin >> side;
+    try {
+        std::cout << "Введите длину стороны треугольника: ";
+        std::cin >> s;
 
-    std::cout << "Введите высоту, опущенную на эту сторону: ";
-    std::cin >> height;
+        std::cout << "Введите высоту, опущенную на эту сторону: ";
+        std::cin >> h;
 
-    double area = 0.5 * side * height;
+        Triangle tri(s, h);
 
-    std::cout << "Площадь треугольника равна: " << area << std::endl;
+        std::cout << "Площадь треугольника равна: " << tri.calculateArea() << std::endl;
+
+    }
+    catch (const char* e) {
+        std::cerr << "Ошибка ввода: " << e << std::endl;
+        return 1;
+    }
 
     return 0;
 }
