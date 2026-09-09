@@ -1,13 +1,25 @@
 #include <iostream>
+#include <windows.h> // Для SetConsoleOutputCP
 
 int main() {
-	double a, h, S;
+    // Устанавливаем кодировку вывода в UTF-8 для корректного отображения кириллицы
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
 
-	std::cin >> a >> h;
+    double side, height;
 
-	S = 0.5 * a * h;
+    std::cout << "Вычисление площади треугольника" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
 
-	std::cout << S << std::endl;
+    std::cout << "Введите длину стороны треугольника: ";
+    std::cin >> side;
 
-	return 0;
+    std::cout << "Введите высоту, опущенную на эту сторону: ";
+    std::cin >> height;
+
+    double area = 0.5 * side * height;
+
+    std::cout << "Площадь треугольника равна: " << area << std::endl;
+
+    return 0;
 }
