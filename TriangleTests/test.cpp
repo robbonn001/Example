@@ -9,18 +9,18 @@ TEST(TriangleTest, CalculateAreaValid) {
 
 // Тест проверки стороны на положительность
 TEST(TriangleTest, InvalidSide) {
-    EXPECT_THROW(Triangle tri(-5.0, 10.0), const char*);
+    EXPECT_THROW(Triangle tri(-5.0, 10.0), std::invalid_argument);
 }
 
 // Тест проверки высоты на положительность
 TEST(TriangleTest, InvalidHeight) {
-    EXPECT_THROW(Triangle tri(10.0, -5.0), const char*);
+    EXPECT_THROW(Triangle tri(10.0, -5.0), std::invalid_argument);
 }
 
 // Тест проверки на ноль
 TEST(TriangleTest, ZeroValues) {
-    EXPECT_THROW(Triangle tri(0.0, 10.0), const char*);
-    EXPECT_THROW(Triangle tri(10.0, 0.0), const char*);
+    EXPECT_THROW(Triangle tri(0.0, 10.0), std::invalid_argument);
+    EXPECT_THROW(Triangle tri(10.0, 0.0), std::invalid_argument);
 }
 
 // Тест геттеров и сеттеров

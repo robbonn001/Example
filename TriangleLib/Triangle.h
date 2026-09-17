@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 
 class Triangle {
@@ -8,29 +7,13 @@ private:
     double height;
 
 public:
-    Triangle(double s, double h) {
-        setSide(s);
-        setHeight(h);
-    }
-
-    double getSide() const { return side; }
-    double getHeight() const { return height; }
-
-    void setSide(double s) {
-        if (s <= 0) {
-            throw "Длина стороны должна быть больше нуля.";
-        }
-        side = s;
-    }
-
-    void setHeight(double h) {
-        if (h <= 0) {
-            throw "Высота должна быть больше нуля.";
-        }
-        height = h;
-    }
-
-    double calculateArea() const {
-        return 0.5 * side * height;
-    }
+    Triangle(double s, double h);
+    double getSide() const;
+    double getHeight() const;
+    void setSide(double s);
+    void setHeight(double h);
+    double calculateArea() const;
 };
+
+inline double Triangle::getSide() const { return side; }
+inline double Triangle::getHeight() const { return height; }
