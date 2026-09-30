@@ -18,7 +18,3 @@ void Triangle::setHeight(double h) {
     }
     height = h;
 }
-
-double Triangle::calculateArea() const {
-    return 0.5 * side * height;
-}

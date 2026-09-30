@@ -31,4 +31,7 @@ TEST(TriangleTest, GettersAndSetters) {
 
     tri.setSide(8.0);
     EXPECT_DOUBLE_EQ(tri.getSide(), 8.0);
+
+    tri.setHeight(9.0);
+    EXPECT_DOUBLE_EQ(tri.getHeight(), 9.0);
 }

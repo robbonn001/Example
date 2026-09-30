@@ -1,5 +1,7 @@
 #pragma once
+
 #include <iostream>
+#include <stdexcept>
 
 class Triangle {
 private:
@@ -8,12 +10,9 @@ private:
 
 public:
     Triangle(double s, double h);
-    double getSide() const;
-    double getHeight() const;
+    double getSide() const noexcept { return side; }
+    double getHeight() const noexcept { return height; }
+    double calculateArea() const noexcept { return 0.5 * side * height; }
     void setSide(double s);
     void setHeight(double h);
-    double calculateArea() const;
 };
-
-inline double Triangle::getSide() const { return side; }
-inline double Triangle::getHeight() const { return height; }

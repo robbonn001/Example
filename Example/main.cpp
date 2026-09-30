@@ -23,8 +23,8 @@ int main() {
         std::cout << "Площадь треугольника равна: " << tri.calculateArea() << std::endl;
 
     }
-    catch (const char* e) {
-        std::cerr << "Ошибка ввода: " << e << std::endl;
+    catch (std::invalid_argument e) {
+        std::cerr << "Ошибка ввода: " << e.what() << std::endl;
         return 1;
     }
 
